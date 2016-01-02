@@ -130,6 +130,7 @@ $if(lang)$
   \usepackage[$lang$]{babel}
 \fi
 $endif$
+\usepackage{titlesec}
 $for(header-includes)$
 $header-includes$
 $endfor$
@@ -142,6 +143,17 @@ $if(subtitle)$
 $endif$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 \date{$date$}
+
+\titleformat
+{\section}
+[display]
+{\bfseries\Large\filleft}
+{}
+{0.5em}
+{}
+[
+    \rule{\textwidth}{1pt}
+]
 
 \begin{document}
 $if(title)$
